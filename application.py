@@ -1,3 +1,3 @@
 #print string
-
-print("Hello, World!!")
+greeting = "HELLO, World!!!"
+print(greeting)
