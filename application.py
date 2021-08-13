@@ -1,3 +1,3 @@
-#just print string
+#print string
 
 print("Hello, World!")
