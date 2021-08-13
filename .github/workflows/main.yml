@@ -2,8 +2,8 @@
 
 name: CI
 env: 
-  DEPLOY_PACKAGE_NAME :"app_${{github.sha}}.zip"
-  AWS_RAGION_NAME     :"us-east-2"
+  DEPLOY_PACKAGE_NAME : "app_${{github.sha}}.zip"
+  AWS_RAGION_NAME     : "us-east-2"
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
