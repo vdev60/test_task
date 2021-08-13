@@ -25,7 +25,7 @@ jobs:
       
       
       - name: Check Python version until set up
-        run: python --verison
+        run: python --version
       
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
@@ -34,7 +34,7 @@ jobs:
       
 
       - name: Check Python version
-        run: python --verison
+        run: python --version
 
       - name: List current dir
         run: ls -la
