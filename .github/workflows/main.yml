@@ -48,6 +48,6 @@ jobs:
           aws-access-key-id : ${{secrets.AWS_ACCESS_KEY_ID}}
           aws-secret-access-key : ${{secrets.AWS_SECRET_ACCESS_KEY}} 
           aws-region : ${{env.AWS_RAGION_NAME}}
-          function_name: mySimpleFunction
-          zip_file: ${{env.DEPLOY_PACKAGE_NAME}}
-          dry_run: true
+      - name: Copy Deployment package to AWS Lambda
+        run : aws lambda update-function-code --function-name mySimpleFunction --zip-file fileb://${{env.DEPLOY_PACKAGE_NAME}} 
+
