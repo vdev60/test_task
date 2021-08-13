@@ -30,7 +30,7 @@ jobs:
       - name: Run application.py 
         run: python application.py
         
-  deploy-on-lambda:
+  deploy-on-aw-lambda:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -41,3 +41,13 @@ jobs:
       
       - name: Create Zip deployment package
         run : zip -r ${{env.DEPLOY_PACKAGE_NAME}} *.py
+      
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id : ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key : ${{secrets.AWS_SECRET_ACCESS_KEY}} 
+          aws-region : ${{env.AWS_RAGION_NAME}}
+      - name: Copy Deployment package to AWS Lambda
+        run : aws lambda update-function-code --function-name mySimpleFunction --zip-file fileb://${{env.DEPLOY_PACKAGE_NAME}} 
+
