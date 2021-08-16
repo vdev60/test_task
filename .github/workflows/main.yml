@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Check Python version
-        run: pip install requests -t .
+        run: ls -la
         
   deploy-on-aw-lambda:
     # The type of runner that the job will run on
@@ -35,7 +35,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
+      - name: Install requests package
+        run : pip install requests -t .      
       - name: Create Zip deployment package
         run : zip -r ${{env.DEPLOY_PACKAGE_NAME}} *.py
       
