@@ -39,7 +39,7 @@ jobs:
       - name: Install requests package
         run : pip install requests -t .      
       - name: Create Zip deployment package
-        run : zip -r ${{env.DEPLOY_PACKAGE_NAME}} *.py
+        run : zip -r ${{env.DEPLOY_PACKAGE_NAME}} -x .\*
       
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
