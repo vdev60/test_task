@@ -26,9 +26,6 @@ jobs:
       
       - name: Check Python version
         run: python --version
-
-      - name: Run application.py 
-        run: python application.py
         
   deploy-on-aw-lambda:
     # The type of runner that the job will run on
