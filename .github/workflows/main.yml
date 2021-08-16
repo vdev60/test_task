@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Check Python version
-        run: python --version
+        run: pip install requests -t .
         
   deploy-on-aw-lambda:
     # The type of runner that the job will run on
