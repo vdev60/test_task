@@ -1,6 +1,6 @@
-#testing lambda function
 import application
-
+data = application.get_data()
+current_element = application.return_current_element(data)
 
 def lambda_handler(event, context):
-    return application.greeting
+    return f"{next(current_element)}"
